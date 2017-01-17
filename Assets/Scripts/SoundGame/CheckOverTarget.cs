@@ -18,14 +18,21 @@ public class CheckOverTarget : MonoBehaviour {
         boxPosition = this.transform.position;
     }
 
-    void update()
+    void Update()
     {
-        if (lockIn & mouseUp)
+        if (lockIn)
         {
             Debug.Log("help");
+            tileScript = tile.gameObject.GetComponent<DragObjects>();
+
             tile.transform.position = boxPosition;
             tileScript.AboveTarget = true;
+            lockIn = false;
+        }else if(tileScript != null)
+        {
+            tileScript.AboveTarget = false;
         }
+
     }
 
     void OnMouseDown()
@@ -38,16 +45,15 @@ public class CheckOverTarget : MonoBehaviour {
         mouseUp = true;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.tag == "Tile")
         {
-            tileScript = other.gameObject.GetComponent<DragObjects>();
             tile = other.gameObject;
             lockIn = true;
             Debug.Log(lockIn);
         }
         else {
-            lockIn = false;                
+            lockIn = false;
         }
     }
 }

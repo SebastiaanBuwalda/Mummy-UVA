@@ -33,14 +33,15 @@ public class DragObjects : MonoBehaviour {
     {
         snapToMouse = false;
 
-        aboveTarget = AboveTarget;
-
-        if (aboveTarget)
+        if (AboveTarget)
         {
             Debug.Log("target locked");
         }
         else {
-            this.transform.position = originalPosition2D;
+            if (!AboveTarget)
+            {
+                this.transform.position = originalPosition2D;
+            }
         }
     }
 
