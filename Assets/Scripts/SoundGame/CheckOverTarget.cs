@@ -13,6 +13,8 @@ public class CheckOverTarget : MonoBehaviour {
 
     private GameObject tile;
 
+    private int tileNumber;
+
     // Use this for initialization
     void Start() {
         boxPosition = this.transform.position;
@@ -24,13 +26,15 @@ public class CheckOverTarget : MonoBehaviour {
         {
             Debug.Log("help");
             tileScript = tile.gameObject.GetComponent<DragObjects>();
-
             tile.transform.position = boxPosition;
+
+            tileNumber = tileScript.TileNumber;
             tileScript.AboveTarget = true;
             lockIn = false;
         }else if(tileScript != null)
         {
             tileScript.AboveTarget = false;
+            tileNumber = 0;
         }
 
     }
@@ -50,10 +54,18 @@ public class CheckOverTarget : MonoBehaviour {
         {
             tile = other.gameObject;
             lockIn = true;
-            Debug.Log(lockIn);
         }
         else {
             lockIn = false;
         }
     }
+
+    public int TileNumber
+    {
+        get
+        {
+            return tileNumber;
+        }
+    }
+
 }

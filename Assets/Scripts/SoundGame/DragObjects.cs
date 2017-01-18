@@ -35,7 +35,7 @@ public class DragObjects : MonoBehaviour {
 
         if (AboveTarget)
         {
-            Debug.Log("target locked");
+
         }
         else {
             if (!AboveTarget)
