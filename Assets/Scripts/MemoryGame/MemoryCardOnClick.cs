@@ -16,6 +16,8 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	public bool alreadyCompleted = false;
 
+	public bool alreadySelected = false;
+
 	void Start()
 	{
 		spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
@@ -27,22 +29,25 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		if (MemoryGameManager.ableToClick&&!alreadyCompleted) {
-			if (MemoryGameManager.mySelection != 0) {
-				//selection has already been made
-				if (MemoryGameManager.mySelection == myCardValue) {
-					StartCoroutine (CompleteCards ());
+		if (!alreadySelected) {
+			if (MemoryGameManager.ableToClick && !alreadyCompleted) {
+				if (MemoryGameManager.mySelection != 0) {
+					//selection has already been made
+					if (MemoryGameManager.mySelection == myCardValue) {
+						StartCoroutine (CompleteCards ());
 
-				} else if (MemoryGameManager.mySelection != myCardValue) {
-					StartCoroutine (WrongCards ());
+					} else if (MemoryGameManager.mySelection != myCardValue) {
+						StartCoroutine (WrongCards ());
+					}
+
+				} else if (MemoryGameManager.mySelection == 0) {
+					//no selection made yet...
+					spriteRenderer.sprite = openCardSprite;
+					MemoryGameManager.mySelection = myCardValue;
+					MemoryGameManager.deletionList.Add (this.gameObject);
+					alreadySelected = true;
+
 				}
-
-			} else if (MemoryGameManager.mySelection == 0) {
-				//no selection made yet...
-				spriteRenderer.sprite = openCardSprite;
-				MemoryGameManager.mySelection = myCardValue;
-				MemoryGameManager.deletionList.Add (this.gameObject);
-
 			}
 		}
 	}
@@ -57,6 +62,11 @@ public class MemoryCardOnClick : MonoBehaviour {
 		MemoryGameManager.deletionList.Add (this.gameObject);
 		foreach (GameObject correctCard in MemoryGameManager.deletionList) {
 			correctCard.GetComponent<MemoryCardOnClick> ().alreadyCompleted = true;
+			MemoryGameManager.myCurrentScore++;
+
+			if (MemoryGameManager.myCurrentScore >= MemoryGameManager.winRequirement && MemoryGameManager.winRequirement != 0) {
+				WinGame ();
+			}
 		}
 		MemoryGameManager.deletionList.Clear ();
 		MemoryGameManager.mySelection = 0;
@@ -73,6 +83,7 @@ public class MemoryCardOnClick : MonoBehaviour {
 		foreach (GameObject wrongCard in MemoryGameManager.deletionList) {
 			SpriteRenderer wrongCardSR = wrongCard.GetComponent<SpriteRenderer> ();
 			wrongCardSR.sprite = cardBack;
+			wrongCard.GetComponent<MemoryCardOnClick> ().alreadySelected = false;
 		}
 
 		spriteRenderer.sprite = cardBack;
@@ -82,5 +93,10 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	}
 
+
+	void WinGame()
+	{
+		Debug.Log ("YOU WON");
+	}
 
 }

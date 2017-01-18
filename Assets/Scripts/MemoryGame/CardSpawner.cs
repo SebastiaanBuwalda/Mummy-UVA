@@ -21,6 +21,7 @@ public class CardSpawner : MonoBehaviour {
 			Instantiate (card, cardPositions[listPosition], Quaternion.identity);
 			cardPositions.RemoveAt (listPosition);
 			cardObjectsList.RemoveAt (listPosition);
+			MemoryGameManager.winRequirement++;
 		}
 	}
 	
