@@ -24,7 +24,6 @@ public class CheckOverTarget : MonoBehaviour {
     {
         if (lockIn)
         {
-            Debug.Log("help");
             tileScript = tile.gameObject.GetComponent<DragObjects>();
             tile.transform.position = boxPosition;
 

@@ -33,8 +33,6 @@ public class CodeMatcher : MonoBehaviour {
 
         boxCodeCombination = box1Code.ToString() + box2Code.ToString() + box3Code.ToString();
 
-        Debug.Log(boxCodeCombination);
-
         CheckBox();
         MatchCode();
     }
@@ -43,6 +41,7 @@ public class CodeMatcher : MonoBehaviour {
         if (box1Code > 0 && box2Code > 0 && box3Code > 0)
         {
             allFilled = true;
+            Debug.Log(boxCodeCombination);
         }
         else {
             allFilled = false;
