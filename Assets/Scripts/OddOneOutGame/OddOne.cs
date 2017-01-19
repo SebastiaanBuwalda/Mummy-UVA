@@ -8,13 +8,11 @@ public class OddOne : MonoBehaviour
     private Vector2 _beginPoint;
     private Vector2 _endPoint;
 
-
     private RectTransform _rect;
 
     private void Start()
     {
         _rect = GetComponent<RectTransform>();
-        GetComponent<Image>().color = Color.red;
         GetComponent<Button>().onClick.AddListener(Click);
     }
 
