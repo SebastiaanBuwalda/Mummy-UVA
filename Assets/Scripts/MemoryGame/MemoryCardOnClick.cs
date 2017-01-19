@@ -5,6 +5,17 @@ using UnityEngine;
 public class MemoryCardOnClick : MonoBehaviour {
 
 	[SerializeField]
+	private AudioClip winSound;
+	[SerializeField]
+	private AudioClip startupSound;
+
+	[SerializeField]
+	private AudioClip startupSound2;
+
+	[SerializeField]
+	private AudioClip firstPairSound;
+
+	[SerializeField]
 	private int myCardValue = 1;
 
 	private SpriteRenderer spriteRenderer;
@@ -18,8 +29,12 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	public bool alreadySelected = false;
 
+	private AudioSource audio;
+
 	void Start()
 	{
+		audio = gameObject.GetComponent<AudioSource> ();
+		StartCoroutine (playSecondSound ());
 		spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
 		cardBack = spriteRenderer.sprite;
 		if (myCardValue == 0) {
@@ -63,7 +78,9 @@ public class MemoryCardOnClick : MonoBehaviour {
 		foreach (GameObject correctCard in MemoryGameManager.deletionList) {
 			correctCard.GetComponent<MemoryCardOnClick> ().alreadyCompleted = true;
 			MemoryGameManager.myCurrentScore++;
-
+			if (MemoryGameManager.myCurrentScore == 2) {
+				FirstPair ();
+			}
 			if (MemoryGameManager.myCurrentScore >= MemoryGameManager.winRequirement && MemoryGameManager.winRequirement != 0) {
 				WinGame ();
 			}
@@ -97,6 +114,18 @@ public class MemoryCardOnClick : MonoBehaviour {
 	void WinGame()
 	{
 		Debug.Log ("YOU WON");
+		audio.PlayOneShot (winSound);
+	}
+
+	IEnumerator playSecondSound()
+	{
+		yield return new WaitForSeconds (startupSound.length);
+		audio.PlayOneShot (startupSound2);
+	}
+
+	void FirstPair()
+	{
+		audio.PlayOneShot (firstPairSound);
 	}
 
 }
