@@ -82,7 +82,8 @@ public class MemoryCardOnClick : MonoBehaviour {
 				FirstPair ();
 			}
 			if (MemoryGameManager.myCurrentScore >= MemoryGameManager.winRequirement && MemoryGameManager.winRequirement != 0) {
-				WinGame ();
+				StartCoroutine (WinGame ());
+
 			}
 		}
 		MemoryGameManager.deletionList.Clear ();
@@ -111,10 +112,12 @@ public class MemoryCardOnClick : MonoBehaviour {
 	}
 
 
-	void WinGame()
+	IEnumerator WinGame()
 	{
-		Debug.Log ("YOU WON");
 		audio.PlayOneShot (winSound);
+		yield return new WaitForSeconds (winSound.length);
+		Application.LoadLevel("memoryDragSentence");
+
 	}
 
 	IEnumerator playSecondSound()
