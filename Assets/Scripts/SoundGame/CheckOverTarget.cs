@@ -15,6 +15,8 @@ public class CheckOverTarget : MonoBehaviour {
 
     private int tileNumber;
 
+    private bool alreadyTiled = false;
+
     // Use this for initialization
     void Start() {
         boxPosition = this.transform.position;
@@ -22,41 +24,44 @@ public class CheckOverTarget : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(tile);
         if (lockIn)
         {
             tileScript = tile.gameObject.GetComponent<DragObjects>();
-            tile.transform.position = boxPosition;
-
-            tileNumber = tileScript.TileNumber;
-            tileScript.AboveTarget = true;
-            lockIn = false;
-        }else if(tileScript != null)
+            mouseUp = tileScript.SnapToMouse;
+            LockInPlace();
+        }
+        else if (tileScript != null)
         {
+            alreadyTiled = false;
             tileScript.AboveTarget = false;
             tileNumber = 0;
+            tile = null;
         }
-
     }
 
-    void OnMouseDown()
-    {
-        mouseUp = false;
-    }
-
-    void OnMouseUp()
-    {
-        mouseUp = true;
+    private void LockInPlace() {
+        if (!mouseUp)
+        {
+            tile.transform.position = boxPosition;
+            tileNumber = tileScript.TileNumber;
+            tileScript.AboveTarget = true;
+            alreadyTiled = true;
+            mouseUp = true;
+        }
     }
 
     void OnCollisionStay2D(Collision2D other) {
-        if (other.gameObject.tag == "Tile")
+        if (alreadyTiled == false && tile == null)
         {
             tile = other.gameObject;
             lockIn = true;
         }
-        else {
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
             lockIn = false;
-        }
     }
 
     public int TileNumber
