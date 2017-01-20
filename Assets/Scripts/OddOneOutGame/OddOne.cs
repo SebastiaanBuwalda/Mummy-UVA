@@ -7,11 +7,17 @@ public class OddOne : MonoBehaviour
 {
     private Vector2 _beginPoint;
     private Vector2 _endPoint;
+    private Vector2 _currentPoint;
 
     private RectTransform _rect;
 
+    private GameObject _particle;
+
+    private bool _checkSwipe = false;
+
     private void Start()
     {
+        _particle = Resources.Load("Prefabs/ParticleEffect") as GameObject;
         _rect = GetComponent<RectTransform>();
         GetComponent<Button>().onClick.AddListener(Click);
     }
@@ -29,6 +35,13 @@ public class OddOne : MonoBehaviour
             _rect.Rotate(new Vector3(0,1,0));
             yield return new WaitForSeconds(.01f);
         }
+        _checkSwipe = true;
+    }
+
+    private void Update()
+    {
+        if(_checkSwipe)
+            CheckSwipe();
     }
 
     private void CheckSwipe()
@@ -42,16 +55,38 @@ public class OddOne : MonoBehaviour
                     _beginPoint = touch.position;
                     break;
 
+                case TouchPhase.Moved:
+                    _currentPoint = touch.position;
+                    if(_currentPoint.x > _beginPoint.x)
+                        Instantiate(_particle, _currentPoint, Quaternion.Euler(Vector3.zero));
+                    break;
+
                 case TouchPhase.Ended:
                     _endPoint = touch.position;
                     break;
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("mousebuttondown");
+            _beginPoint = Input.mousePosition;
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("mousebutton up");
+            _endPoint = Input.mousePosition;
+            SwipeDirectionCheck();
+        }
     }
+    
 
     private void SwipeDirectionCheck()
     {
-        if(_beginPoint.x < _endPoint.x)
+        if (_beginPoint.x < _endPoint.x)
+        {
             Debug.Log("We did it Reddit");
+        }
     }
 }
