@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class OddOne : MonoBehaviour
 {
+
+	[SerializeField]
+	private string nextLevel = "OddOneOutGameToSoundGame";
     private Vector2 _beginPoint;
     private Vector2 _endPoint;
     private Vector2 _currentPoint;
@@ -25,6 +28,7 @@ public class OddOne : MonoBehaviour
     private void Click()
     {
         Debug.Log("you pressed the right button. Good job!");
+		Application.LoadLevel (nextLevel);
         StartCoroutine(Turn());
     }
 
