@@ -114,6 +114,7 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	IEnumerator WinGame()
 	{
+		audio.Stop ();
 		audio.PlayOneShot (winSound);
 		yield return new WaitForSeconds (winSound.length);
 		Application.LoadLevel("memoryDragSentence");
@@ -123,11 +124,13 @@ public class MemoryCardOnClick : MonoBehaviour {
 	IEnumerator playSecondSound()
 	{
 		yield return new WaitForSeconds (startupSound.length);
+		audio.Stop ();
 		audio.PlayOneShot (startupSound2);
 	}
 
 	void FirstPair()
 	{
+		audio.Stop ();
 		audio.PlayOneShot (firstPairSound);
 	}
 
