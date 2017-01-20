@@ -19,7 +19,11 @@ public class CodeMatcher : MonoBehaviour {
 
     private bool allFilled;
 
+	[SerializeField]
     private string correctCode = "345";
+
+	[SerializeField]
+	private string nextLevelCode = "";
     // Use this for initialization
     void Start () {
         
@@ -52,6 +56,8 @@ public class CodeMatcher : MonoBehaviour {
         if (allFilled == true && boxCodeCombination == correctCode)
         {
             Debug.Log("you got it");
+			Application.LoadLevel (nextLevelCode);
+
         }
     }
 }
