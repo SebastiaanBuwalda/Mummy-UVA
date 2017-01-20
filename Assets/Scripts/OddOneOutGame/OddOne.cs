@@ -18,6 +18,9 @@ public class OddOne : MonoBehaviour
 
     private bool _checkSwipe = false;
 
+    public AudioSource goedGedaan;
+
+
     private void Start()
     {
         _particle = Resources.Load("Prefabs/ParticleEffect") as GameObject;
@@ -28,7 +31,7 @@ public class OddOne : MonoBehaviour
     private void Click()
     {
         Debug.Log("you pressed the right button. Good job!");
-		Application.LoadLevel (nextLevel);
+        goedGedaan.Play();
         StartCoroutine(Turn());
     }
 
@@ -40,6 +43,8 @@ public class OddOne : MonoBehaviour
             yield return new WaitForSeconds(.01f);
         }
         _checkSwipe = true;
+        yield return new WaitForSeconds(1f);
+        Application.LoadLevel(nextLevel);
     }
 
     private void Update()

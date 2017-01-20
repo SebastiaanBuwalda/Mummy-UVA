@@ -6,8 +6,12 @@ public class ButtonChooser : MonoBehaviour
 {
     private readonly List<GameObject> _buttons = new List<GameObject>();
 
-	private void Awake ()
+    [SerializeField]
+    private AudioSource _ietsLijktNiet;
+
+    private void Awake ()
 	{
+        _ietsLijktNiet.Play();
 	    ChooseOddOne();
 	}
 
