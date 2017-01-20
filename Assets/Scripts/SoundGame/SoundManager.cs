@@ -7,11 +7,11 @@ public class SoundManager : MonoBehaviour {
     [SerializeField]
     private AudioClip tileSound;
 
+    [SerializeField]
     private AudioSource audio;
 
     // Use this for initialization
     void Start () {
-        audio = gameObject.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
