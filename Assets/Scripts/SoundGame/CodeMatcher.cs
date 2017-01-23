@@ -15,6 +15,9 @@ public class CodeMatcher : MonoBehaviour {
     private int box2Code;
     private int box3Code;
 
+	[SerializeField]
+	private int gameMode = 3;
+
     private string boxCodeCombination;
 
     private bool allFilled;
@@ -42,14 +45,22 @@ public class CodeMatcher : MonoBehaviour {
     }
 
     private void CheckBox() {
-        if (box1Code > 0 && box2Code > 0 && box3Code > 0)
-        {
-            allFilled = true;
-            Debug.Log(boxCodeCombination);
-        }
-        else {
-            allFilled = false;
-        }
+		if (gameMode == 3) {
+			if (box1Code > 0 && box2Code > 0 && box3Code > 0) {
+				allFilled = true;
+				Debug.Log (boxCodeCombination);
+			} else {
+				allFilled = false;
+			}
+		}
+		else if  (gameMode == 2) {
+			if (box1Code > 0 && box2Code > 0) {
+				allFilled = true;
+				Debug.Log (boxCodeCombination);
+			} else {
+				allFilled = false;
+			}
+		}
     }
 
     private void MatchCode() {
@@ -59,5 +70,7 @@ public class CodeMatcher : MonoBehaviour {
 			Application.LoadLevel (nextLevelCode);
 
         }
+
+
     }
 }
