@@ -54,7 +54,7 @@ public class CodeMatcher : MonoBehaviour {
             box1Code = box1.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box2Code = box2.gameObject.GetComponent<CheckOverTarget>().TileNumber;
 
-            correctCode = "52";
+            correctCode = "12";
 
             boxCodeCombination = box1Code.ToString() + box2Code.ToString();
         }
