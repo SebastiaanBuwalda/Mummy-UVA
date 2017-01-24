@@ -10,11 +10,16 @@ public class PlayMovie : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Handheld.PlayFullScreenMovie(MovieTitle, Color.black, FullScreenMovieControlMode.Hidden);
+        CutScene();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void CutScene()
+    {
+        Handheld.PlayFullScreenMovie(MovieTitle, Color.black, FullScreenMovieControlMode.Hidden);
+    }
 }
