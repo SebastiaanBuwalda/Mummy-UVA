@@ -31,15 +31,21 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	private AudioSource audio;
 
+	private GameObject audioObject;
+
+	private bool firstPairActivated = false;
+
 	void Start()
 	{
-		audio = gameObject.GetComponent<AudioSource> ();
+		
 		StartCoroutine (playSecondSound ());
 		spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
 		cardBack = spriteRenderer.sprite;
 		if (myCardValue == 0) {
 			Debug.LogError ("myCardValue should never be zero");
 		}
+		audioObject = MemoryGameManager.audioSourceList [0];
+		audio = audioObject.GetComponent<AudioSource> ();
 	}
 
 	void OnMouseDown()
@@ -124,14 +130,17 @@ public class MemoryCardOnClick : MonoBehaviour {
 	IEnumerator playSecondSound()
 	{
 		yield return new WaitForSeconds (startupSound.length);
-		audio.Stop ();
-		audio.PlayOneShot (startupSound2);
+		if (!firstPairActivated) {
+			audio.Stop ();
+			audio.PlayOneShot (startupSound2);
+		}
 	}
 
 	void FirstPair()
 	{
 		audio.Stop ();
 		audio.PlayOneShot (firstPairSound);
+		firstPairActivated = true;
 	}
 
 }
