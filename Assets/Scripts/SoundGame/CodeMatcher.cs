@@ -39,6 +39,9 @@ public class CodeMatcher : MonoBehaviour {
     [SerializeField]
     private AudioSource audio;
 
+    [SerializeField]
+    private int timeToWait;
+
     // Update is called once per frame
     void Update () {
 
@@ -49,7 +52,7 @@ public class CodeMatcher : MonoBehaviour {
             box3Code = box3.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box4Code = box4.gameObject.GetComponent<CheckOverTarget>().TileNumber;
 
-            correctCode = "3456";
+            correctCode = "6742";
 
             boxCodeCombination = box1Code.ToString() + box2Code.ToString() + box3Code.ToString() + box4Code.ToString();
         }
@@ -123,17 +126,27 @@ public class CodeMatcher : MonoBehaviour {
     private void CorrectCode() {
         if (gameMode == 2)
         {
-            Application.LoadLevel(nextLevelCode);
+            StartCoroutine(SwitchScene());
         }
         else if (gameMode == 3)
         {
             audio.Stop();
             audio.PlayOneShot(correctSound1);
+
+            StartCoroutine(SwitchScene());
         }
         else if (gameMode == 4)
         {
             audio.Stop();
             audio.PlayOneShot(correctSound2);
+
+            StartCoroutine(SwitchScene());
         }
+    }
+
+    IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(timeToWait);
+        Application.LoadLevel(nextLevelCode);
     }
 }
