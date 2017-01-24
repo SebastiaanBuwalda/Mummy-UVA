@@ -29,18 +29,21 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	public bool alreadySelected = false;
 
-	[SerializeField]
 	private AudioSource audio;
+
+	private GameObject audioObject;
 
 	void Start()
 	{
-		//audio = gameObject.GetComponent<AudioSource> ();
+		
 		StartCoroutine (playSecondSound ());
 		spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
 		cardBack = spriteRenderer.sprite;
 		if (myCardValue == 0) {
 			Debug.LogError ("myCardValue should never be zero");
 		}
+		audioObject = MemoryGameManager.audioSourceList [0];
+		audio = audioObject.GetComponent<AudioSource> ();
 	}
 
 	void OnMouseDown()

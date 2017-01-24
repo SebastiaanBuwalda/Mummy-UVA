@@ -13,4 +13,5 @@ public class MemoryGameManager : MonoBehaviour {
 
 	public static List<GameObject> deletionList = new List<GameObject> ();
 
+	public static List<GameObject> audioSourceList = new List<GameObject> ();
 }
