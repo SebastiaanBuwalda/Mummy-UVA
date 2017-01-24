@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class DragObjects : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject matcher;
+
+    private CodeMatcher codeMatcher;
+    private bool mouseClick;
+
     private Vector2 mousePosition2D;
 
     private Vector2 originalPosition2D;
@@ -24,9 +30,24 @@ public class DragObjects : MonoBehaviour {
         originalPosition2D = this.transform.position;
     }
 
+    void Update()
+    {
+        codeMatcher = matcher.gameObject.GetComponent<CodeMatcher>();
+        mouseClick = codeMatcher.MouseClick;
+
+        if (snapToMouse)
+        {
+            mousePosition2D = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            this.transform.position = mousePosition2D;
+        }
+    }
+
     void OnMouseDown()
     {
-        snapToMouse = true;
+        if (mouseClick)
+        {
+            snapToMouse = true;
+        }
     }
 
     void OnMouseUp()
@@ -42,15 +63,6 @@ public class DragObjects : MonoBehaviour {
             {
                 this.transform.position = originalPosition2D;
             }
-        }
-    }
-
-    void Update()
-    {
-        if (snapToMouse)
-        {
-            mousePosition2D = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-            this.transform.position = mousePosition2D;
         }
     }
 

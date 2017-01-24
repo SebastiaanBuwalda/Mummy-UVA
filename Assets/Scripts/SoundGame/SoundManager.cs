@@ -5,6 +5,12 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
 
     [SerializeField]
+    private GameObject matcher;
+
+    private CodeMatcher codeMatcher;
+    private bool mouseClick;
+
+    [SerializeField]
     private AudioClip tileSound;
 
     [SerializeField]
@@ -16,11 +22,15 @@ public class SoundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        codeMatcher = matcher.gameObject.GetComponent<CodeMatcher>();
+        mouseClick = codeMatcher.MouseClick;
+    }
 
     void OnMouseDown() {
-        playSound();
+        if (mouseClick)
+        {
+            playSound();
+        }
     }
 
     private void playSound()

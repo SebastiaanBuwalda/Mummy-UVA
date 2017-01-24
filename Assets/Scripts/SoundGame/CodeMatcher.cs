@@ -32,15 +32,22 @@ public class CodeMatcher : MonoBehaviour {
 	private string nextLevelCode = "";
 
     [SerializeField]
+    private AudioClip correctSound;
+    [SerializeField]
     private AudioClip correctSound1;
     [SerializeField]
     private AudioClip correctSound2;
+
+    [SerializeField]
+    private AudioClip wrongSound;
 
     [SerializeField]
     private AudioSource audio;
 
     [SerializeField]
     private int timeToWait;
+
+    private bool mouseClick = true;
 
     // Update is called once per frame
     void Update () {
@@ -52,16 +59,12 @@ public class CodeMatcher : MonoBehaviour {
             box3Code = box3.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box4Code = box4.gameObject.GetComponent<CheckOverTarget>().TileNumber;
 
-            correctCode = "6742";
-
             boxCodeCombination = box1Code.ToString() + box2Code.ToString() + box3Code.ToString() + box4Code.ToString();
         }
         else if (gameMode == 2)
         {
             box1Code = box1.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box2Code = box2.gameObject.GetComponent<CheckOverTarget>().TileNumber;
-
-            correctCode = "63";
 
             boxCodeCombination = box1Code.ToString() + box2Code.ToString();
         }
@@ -71,13 +74,13 @@ public class CodeMatcher : MonoBehaviour {
             box2Code = box2.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box3Code = box3.gameObject.GetComponent<CheckOverTarget>().TileNumber;
 
-            correctCode = "375";
-
             boxCodeCombination = box1Code.ToString() + box2Code.ToString() + box3Code.ToString();
         }
 
         CheckBox();
     }
+
+    /// CHECKS IF EVERYTHING IS FILLED FOR THE MEMORY GAME
 
     private void CheckBox() {
 		if  (gameMode == 2) {
@@ -89,6 +92,8 @@ public class CodeMatcher : MonoBehaviour {
 			}
 		}
     }
+
+    //CHECKS IF EVERYTHING IS FILLED AFTER PRESSING THE BUTTON
 
     public void CheckAwnser() {
         if (gameMode == 3) {
@@ -115,13 +120,22 @@ public class CodeMatcher : MonoBehaviour {
         }
     }
 
+    //MATCHES THE CODE 
+
     private void MatchCode() {
         if (allFilled == true && boxCodeCombination == correctCode)
         {
-            Debug.Log("you got it");
+            mouseClick = false;
             CorrectCode();
         }
+        else if (gameMode == 3 || gameMode == 4)
+        {
+            audio.Stop();
+            audio.PlayOneShot(wrongSound);
+        }
     }
+
+    //CHECKS THE GAMEMODE AND PLAYS THE CORRECT SOUND
 
     private void CorrectCode() {
         if (gameMode == 2)
@@ -144,9 +158,25 @@ public class CodeMatcher : MonoBehaviour {
         }
     }
 
+    //PLAYS THE LAST SOUND AND SWITCHES SCENE
     IEnumerator SwitchScene()
     {
         yield return new WaitForSeconds(timeToWait);
+        audio.Stop();
+        audio.PlayOneShot(correctSound);
+        yield return new WaitForSeconds(timeToWait);
         Application.LoadLevel(nextLevelCode);
     }
+
+
+    //MOUSECLICK BOOL TO KEEP PLAYER FROM DRAGGING AFTER THE GAME IS DONE
+     
+    public bool MouseClick
+    {
+        get
+        {
+            return mouseClick;
+        }
+    }
+
 }
