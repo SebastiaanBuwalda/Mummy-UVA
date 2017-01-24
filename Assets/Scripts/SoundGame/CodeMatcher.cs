@@ -30,15 +30,19 @@ public class CodeMatcher : MonoBehaviour {
 
 	[SerializeField]
 	private string nextLevelCode = "";
-    // Use this for initialization
-    void Start () {
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
 
-        if (gameMode == 3)
+    [SerializeField]
+    private AudioClip correctSound1;
+    [SerializeField]
+    private AudioClip correctSound2;
+
+    [SerializeField]
+    private AudioSource audio;
+
+    // Update is called once per frame
+    void Update () {
+
+        if (gameMode == 4)
         {
             box1Code = box1.gameObject.GetComponent<CheckOverTarget>().TileNumber;
             box2Code = box2.gameObject.GetComponent<CheckOverTarget>().TileNumber;
@@ -58,40 +62,78 @@ public class CodeMatcher : MonoBehaviour {
 
             boxCodeCombination = box1Code.ToString() + box2Code.ToString();
         }
-        
+        else if (gameMode == 3)
+        {
+            box1Code = box1.gameObject.GetComponent<CheckOverTarget>().TileNumber;
+            box2Code = box2.gameObject.GetComponent<CheckOverTarget>().TileNumber;
+            box3Code = box3.gameObject.GetComponent<CheckOverTarget>().TileNumber;
 
+            correctCode = "375";
+
+            boxCodeCombination = box1Code.ToString() + box2Code.ToString() + box3Code.ToString();
+        }
 
         CheckBox();
-        MatchCode();
     }
 
     private void CheckBox() {
-		if (gameMode == 3) {
-			if (box1Code > 0 && box2Code > 0 && box3Code > 0 && box4Code > 0) {
-				allFilled = true;
-				Debug.Log (boxCodeCombination);
-			} else {
-				allFilled = false;
-			}
-		}
-		else if  (gameMode == 2) {
+		if  (gameMode == 2) {
 			if (box1Code > 0 && box2Code > 0) {
 				allFilled = true;
-				Debug.Log (boxCodeCombination);
-			} else {
+                MatchCode();
+            } else {
 				allFilled = false;
 			}
 		}
+    }
+
+    public void CheckAwnser() {
+        if (gameMode == 3) {
+            if (box1Code > 0 && box2Code > 0 && box3Code > 0)
+            {
+                allFilled = true;
+                MatchCode();
+            }
+            else
+            {
+                allFilled = false;
+            }
+        }else if (gameMode == 4)
+        {
+            if (box1Code > 0 && box2Code > 0 && box3Code > 0 && box4Code > 0)
+            {
+                allFilled = true;
+                MatchCode();
+            }
+            else
+            {
+                allFilled = false;
+            }
+        }
     }
 
     private void MatchCode() {
         if (allFilled == true && boxCodeCombination == correctCode)
         {
             Debug.Log("you got it");
-			Application.LoadLevel (nextLevelCode);
-
+            CorrectCode();
         }
+    }
 
-
+    private void CorrectCode() {
+        if (gameMode == 2)
+        {
+            Application.LoadLevel(nextLevelCode);
+        }
+        else if (gameMode == 3)
+        {
+            audio.Stop();
+            audio.PlayOneShot(correctSound1);
+        }
+        else if (gameMode == 4)
+        {
+            audio.Stop();
+            audio.PlayOneShot(correctSound2);
+        }
     }
 }
