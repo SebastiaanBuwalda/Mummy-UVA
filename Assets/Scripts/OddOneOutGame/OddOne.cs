@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class OddOne : MonoBehaviour
 {
+
+     public delegate void Global();
+     public static event Global Change;
 
 	[SerializeField]
 	private string nextLevel = "OddOneOutGameToSoundGame";
@@ -16,22 +20,22 @@ public class OddOne : MonoBehaviour
 
     private GameObject _particle;
 
-    private bool _checkSwipe = false;
+    private bool _checkSwipeLeft = false;
+    private bool _checkSwipeRight = false;
 
-    public AudioSource goedGedaan;
-
+    public AudioClip GoedGedaan;
+    public AudioClip DeRichtingWaarin;
 
     private void Start()
     {
-        _particle = Resources.Load("Prefabs/ParticleEffect") as GameObject;
+        _particle = Resources.Load("ParticleEffect") as GameObject;
         _rect = GetComponent<RectTransform>();
         GetComponent<Button>().onClick.AddListener(Click);
     }
 
     private void Click()
     {
-        Debug.Log("you pressed the right button. Good job!");
-        goedGedaan.Play();
+        SoundSystem.playAudio(GoedGedaan);
         StartCoroutine(Turn());
     }
 
@@ -42,60 +46,101 @@ public class OddOne : MonoBehaviour
             _rect.Rotate(new Vector3(0,1,0));
             yield return new WaitForSeconds(.01f);
         }
-        _checkSwipe = true;
-        yield return new WaitForSeconds(1f);
-        Application.LoadLevel(nextLevel);
+        _checkSwipeRight = true;
+        SoundSystem.playAudio(DeRichtingWaarin);
     }
 
     private void Update()
     {
-        if(_checkSwipe)
-            CheckSwipe();
+        if(_checkSwipeRight && _checkSwipeLeft != true)
+            CheckSwipe( "right");
+
+        if (_checkSwipeLeft)
+            CheckSwipe( "left");
     }
 
-    private void CheckSwipe()
+    private void CheckSwipe( string dir )
     {
-        if (Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-            switch (touch.phase)
+        #if UNITY_ANDROID
+            if (Input.touchCount > 0)
             {
-                case TouchPhase.Began:
-                    _beginPoint = touch.position;
-                    break;
+                var touch = Input.GetTouch(0);
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        _beginPoint = touch.position;
+                        break;
 
-                case TouchPhase.Moved:
-                    _currentPoint = touch.position;
-                    if(_currentPoint.x > _beginPoint.x)
-                        Instantiate(_particle, _currentPoint, Quaternion.Euler(Vector3.zero));
-                    break;
+                    case TouchPhase.Moved:
+                        _currentPoint = touch.position;
+                        if(SwipeDirectionCheck(dir))
+                            Instantiate(_particle, _currentPoint, Quaternion.Euler(Vector3.zero));
+                        break;
 
-                case TouchPhase.Ended:
-                    _endPoint = touch.position;
-                    break;
+                    case TouchPhase.Ended:
+                        _endPoint = Input.mousePosition;
+                        if (SwipeDirectionCheck("right") && Change != null && _checkSwipeRight && _checkSwipeLeft == false)
+                            Change();
+
+                        if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft)
+                            StartCoroutine(LoadNextLevel());
+                        break;
+                }
             }
-        }
+        #endif
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("mousebuttondown");
-            _beginPoint = Input.mousePosition;
-        }
+        #if UNITY_EDITOR
 
-        else if (Input.GetMouseButtonUp(0))
-        {
-            Debug.Log("mousebutton up");
-            _endPoint = Input.mousePosition;
-            SwipeDirectionCheck();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                _beginPoint = Input.mousePosition;
+            }
+
+            else if (Input.GetMouseButtonUp(0))
+            {
+                _endPoint = Input.mousePosition;
+                if (SwipeDirectionCheck("right") && Change != null && _checkSwipeRight && _checkSwipeLeft == false)
+                    Change();
+
+                if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft)
+                   StartCoroutine(LoadNextLevel());
+            }
+        #endif
     }
-    
 
-    private void SwipeDirectionCheck()
+
+    private bool SwipeDirectionCheck( string dir)
     {
-        if (_beginPoint.x < _endPoint.x)
-        {
-            Debug.Log("We did it Reddit");
+        if (_beginPoint.x < _endPoint.x && dir == "right") {
+            return true;
+        } else if (_beginPoint.x > _endPoint.x && dir == "left") {
+            return true;
+        } else {
+            return false;
         }
+
+    }
+
+    private IEnumerator LoadNextLevel()
+    {
+        Debug.Log("loading new scene");
+        yield return new WaitForSeconds(1f);
+        Application.LoadLevel(nextLevel);
+    }
+
+    private void ChangeSprite()
+    {
+        int r = Random.Range(1, 18);
+        GetComponent<Image>().sprite = Resources.Load("Ex2/" + r.ToString(), typeof(Sprite)) as Sprite;
+        _checkSwipeLeft = true;
+    }
+
+    private void OnEnable()
+    {
+        Change += ChangeSprite;
+    }
+    private void OnDisable()
+    {
+        Change -= ChangeSprite;
     }
 }
