@@ -29,11 +29,12 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	public bool alreadySelected = false;
 
+	[SerializeField]
 	private AudioSource audio;
 
 	void Start()
 	{
-		audio = gameObject.GetComponent<AudioSource> ();
+		//audio = gameObject.GetComponent<AudioSource> ();
 		StartCoroutine (playSecondSound ());
 		spriteRenderer = gameObject.GetComponent <SpriteRenderer>();
 		cardBack = spriteRenderer.sprite;
