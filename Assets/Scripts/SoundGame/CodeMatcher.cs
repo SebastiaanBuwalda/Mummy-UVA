@@ -49,6 +49,8 @@ public class CodeMatcher : MonoBehaviour {
 
     private bool mouseClick = true;
 
+    private bool wrongAwnser = false;
+
     // Update is called once per frame
     void Update () {
 
@@ -132,6 +134,8 @@ public class CodeMatcher : MonoBehaviour {
         {
             audio.Stop();
             audio.PlayOneShot(wrongSound);
+
+            wrongAwnser = true;
         }
     }
 
@@ -178,6 +182,14 @@ public class CodeMatcher : MonoBehaviour {
         get
         {
             return mouseClick;
+        }
+    }
+
+    public bool WrongAwnser
+    {
+        get
+        {
+            return wrongAwnser;
         }
     }
 

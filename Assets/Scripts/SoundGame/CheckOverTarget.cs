@@ -17,6 +17,17 @@ public class CheckOverTarget : MonoBehaviour {
 
     private bool alreadyTiled = false;
 
+    [SerializeField]
+    private GameObject matcher;
+
+    private CodeMatcher codeMatcher;
+    private bool mouseClick;
+
+    private bool wrongAwnser;
+
+    [SerializeField]
+    private bool gameModeS;
+
     // Use this for initialization
     void Start() {
         boxPosition = this.transform.position;
@@ -37,6 +48,17 @@ public class CheckOverTarget : MonoBehaviour {
             tileScript.AboveTarget = false;
             tileNumber = 0;
             tile = null;
+        }
+
+        if (gameModeS)
+        {
+            codeMatcher = matcher.gameObject.GetComponent<CodeMatcher>();
+            wrongAwnser = codeMatcher.WrongAwnser;
+
+            if (wrongAwnser)
+            {
+                tileScript.AboveTarget = false;
+            }
         }
     }
 
