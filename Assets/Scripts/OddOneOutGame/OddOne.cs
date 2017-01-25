@@ -130,6 +130,7 @@ public class OddOne : MonoBehaviour
 
     private void ChangeSprite()
     {
+        transform.rotation = Quaternion.Euler( Vector3.zero);
         int r = Random.Range(1, 18);
         GetComponent<Image>().sprite = Resources.Load("Ex2/" + r.ToString(), typeof(Sprite)) as Sprite;
         _checkSwipeLeft = true;
