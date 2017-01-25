@@ -25,6 +25,9 @@ public class DragObjects : MonoBehaviour {
 
     public bool AboveTarget;
 
+	[SerializeField]
+	private bool GameModes;
+
     void Start()
     {
         originalPosition2D = this.transform.position;
@@ -44,10 +47,11 @@ public class DragObjects : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (mouseClick)
-        {
-            snapToMouse = true;
-        }
+		if (mouseClick && GameModes) {
+			snapToMouse = true;
+		} else if (!GameModes) {
+			snapToMouse = true;
+		}
     }
 
     void OnMouseUp()

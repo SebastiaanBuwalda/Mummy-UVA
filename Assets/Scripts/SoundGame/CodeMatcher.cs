@@ -162,8 +162,10 @@ public class CodeMatcher : MonoBehaviour {
     IEnumerator SwitchScene()
     {
         yield return new WaitForSeconds(timeToWait);
-        audio.Stop();
-        audio.PlayOneShot(correctSound);
+		if (gameMode==3||gameMode==4) {
+			audio.Stop ();
+			audio.PlayOneShot (correctSound);
+		}
         yield return new WaitForSeconds(timeToWait);
         Application.LoadLevel(nextLevelCode);
     }
