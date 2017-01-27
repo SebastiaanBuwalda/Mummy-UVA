@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class OddOne : MonoBehaviour
 {
-
+    
      public delegate void Global();
      public static event Global Change;
 
@@ -20,34 +20,31 @@ public class OddOne : MonoBehaviour
 
     private GameObject _particle;
 
+    private bool _clicked = false;
     private bool _checkSwipeLeft = false;
     private bool _checkSwipeRight = false;
 
     public AudioClip GoedGedaan;
     public AudioClip DeRichtingWaarin;
 
-    private void Start()
+    private void OnEnable()
     {
         _particle = Resources.Load("ParticleEffect") as GameObject;
         _rect = GetComponent<RectTransform>();
         GetComponent<Button>().onClick.AddListener(Click);
+        Change += ChangeSprite;
+    }
+
+    private void OnDisable()
+    {
+        Change -= ChangeSprite;
     }
 
     private void Click()
     {
+        if (_clicked) return;
         SoundSystem.playAudio(GoedGedaan);
         StartCoroutine(Turn());
-    }
-
-    private IEnumerator Turn()
-    {
-        for (var i = 0; i < 180; i++)
-        {
-            _rect.Rotate(new Vector3(0,1,0));
-            yield return new WaitForSeconds(.01f);
-        }
-        _checkSwipeRight = true;
-        SoundSystem.playAudio(DeRichtingWaarin);
     }
 
     private void Update()
@@ -121,27 +118,31 @@ public class OddOne : MonoBehaviour
 
     }
 
-    private IEnumerator LoadNextLevel()
-    {
-        Debug.Log("loading new scene");
-        yield return new WaitForSeconds(1f);
-        Application.LoadLevel(nextLevel);
-    }
-
     private void ChangeSprite()
     {
-        transform.rotation = Quaternion.Euler( Vector3.zero);
+        transform.rotation = Quaternion.Euler(Vector3.zero);
         int r = Random.Range(1, 18);
         GetComponent<Image>().sprite = Resources.Load("Ex2/" + r.ToString(), typeof(Sprite)) as Sprite;
         _checkSwipeLeft = true;
     }
 
-    private void OnEnable()
+    private IEnumerator LoadNextLevel()
     {
-        Change += ChangeSprite;
+        Debug.Log("loading new scene");
+        yield return new WaitForSeconds(1f);
+        Application.LoadLevel(Application.loadedLevel);
     }
-    private void OnDisable()
+
+
+    private IEnumerator Turn()
     {
-        Change -= ChangeSprite;
+        _clicked = true;
+        for (var i = 0; i < 180; i++)
+        {
+            _rect.Rotate(new Vector3(0, 1, 0));
+            yield return new WaitForSeconds(.01f);
+        }
+        _checkSwipeRight = true;
+        SoundSystem.playAudio(DeRichtingWaarin);
     }
 }

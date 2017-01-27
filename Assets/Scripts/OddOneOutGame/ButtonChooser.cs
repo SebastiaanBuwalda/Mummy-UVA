@@ -15,6 +15,11 @@ public class ButtonChooser : MonoBehaviour
 	    ChooseOddOne();
 	}
 
+    private void OnEnable()
+    {
+        Debug.Log("Enabled");
+    }
+
     private void ChooseOddOne()
     {
         foreach (Transform child in transform)

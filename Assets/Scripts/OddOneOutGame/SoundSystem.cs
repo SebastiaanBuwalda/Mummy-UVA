@@ -14,6 +14,7 @@ public class SoundSystem : MonoBehaviour {
     void OnEnable()
     {
         playAudio += PlayAudio;
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     private void PlayAudio(AudioClip clip)
