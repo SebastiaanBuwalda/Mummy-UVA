@@ -20,6 +20,8 @@ public class RegularOne : MonoBehaviour {
     [SerializeField]
     private AudioClip GebruikJeVinger;
 
+    private bool clicked = false;
+
     public void Click()
     {
         SoundSystem.playAudio(_HelaasDitIs);

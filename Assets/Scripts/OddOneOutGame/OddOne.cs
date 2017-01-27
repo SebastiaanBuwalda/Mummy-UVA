@@ -108,29 +108,27 @@ public class OddOne : MonoBehaviour
 
     private bool SwipeDirectionCheck( string dir)
     {
-        if (_beginPoint.x < _endPoint.x && dir == "right") {
+        if (_beginPoint.x < _endPoint.x - 50 && dir == "right") {
             return true;
-        } else if (_beginPoint.x > _endPoint.x && dir == "left") {
+        } else if (_beginPoint.x > _endPoint.x + 50 && dir == "left") {
             return true;
-        } else {
-            return false;
         }
 
+        return false;
     }
 
     private void ChangeSprite()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
-        int r = Random.Range(1, 18);
+        var r = Random.Range(1, 18);
         GetComponent<Image>().sprite = Resources.Load("Ex2/" + r.ToString(), typeof(Sprite)) as Sprite;
         _checkSwipeLeft = true;
     }
 
     private IEnumerator LoadNextLevel()
     {
-        Debug.Log("loading new scene");
         yield return new WaitForSeconds(1f);
-        Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel(nextLevel);
     }
 
 
