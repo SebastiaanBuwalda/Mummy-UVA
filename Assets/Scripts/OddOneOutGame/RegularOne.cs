@@ -20,6 +20,9 @@ public class RegularOne : MonoBehaviour {
     [SerializeField]
     private AudioClip GebruikJeVinger;
 
+    [SerializeField]
+    private AudioClip _positive;
+
     private bool clicked = false;
 
     public void Click()
@@ -38,9 +41,12 @@ public class RegularOne : MonoBehaviour {
     {
         if (GetComponent<OddOne>() == null) return;
 
+        var oddone = GetComponent<OddOne>();
+
         GetComponent<Image>().sprite = _oddOneOutSprite;
-        GetComponent<OddOne>().GoedGedaan = _goedGedaan;
-        GetComponent<OddOne>().DeRichtingWaarin = DeRichtingWaarin;
+        oddone.GoedGedaan = _goedGedaan;
+        oddone.DeRichtingWaarin = DeRichtingWaarin;
+        oddone.Positive = _positive;
     }
 
     private void ChangeSprite()

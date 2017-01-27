@@ -26,6 +26,7 @@ public class OddOne : MonoBehaviour
 
     public AudioClip GoedGedaan;
     public AudioClip DeRichtingWaarin;
+    public AudioClip Positive;
 
     private void OnEnable()
     {
@@ -96,11 +97,13 @@ public class OddOne : MonoBehaviour
             else if (Input.GetMouseButtonUp(0))
             {
                 _endPoint = Input.mousePosition;
-                if (SwipeDirectionCheck("right") && Change != null && _checkSwipeRight && _checkSwipeLeft == false)
+                if (SwipeDirectionCheck("right") && Change != null && _checkSwipeRight && _checkSwipeLeft == false){
                     Change();
+                    SoundSystem.playAudio(Positive);}
 
-                if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft)
-                   StartCoroutine(LoadNextLevel());
+                if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft) { 
+                SoundSystem.playAudio(Positive);
+                StartCoroutine(LoadNextLevel());}
             }
         #endif
     }
