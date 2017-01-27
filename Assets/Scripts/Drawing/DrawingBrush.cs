@@ -44,4 +44,14 @@ public class DrawingBrush : MonoBehaviour {
 			DrawingSaverScript.DrawingList.Add (dot);
 		}
 	}
+
+
+	public void Ereased()
+	{
+		foreach (GameObject dot in DrawingSaver) 
+		{
+			Destroy (dot.gameObject);
+		}
+	}
+
 }
