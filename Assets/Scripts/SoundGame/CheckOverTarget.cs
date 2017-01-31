@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckOverTarget : MonoBehaviour {
 
-    private Vector2 boxPosition;
+    private Vector3 boxPosition;
 
     private DragObjects tileScript;
     private bool mouseUp = false;
@@ -65,7 +65,7 @@ public class CheckOverTarget : MonoBehaviour {
     private void LockInPlace() {
         if (!mouseUp)
         {
-            tile.transform.position = boxPosition;
+            tile.transform.position = new Vector3(boxPosition.x, boxPosition.y, boxPosition.z - 1);
             tileNumber = tileScript.TileNumber;
             tileScript.AboveTarget = true;
             alreadyTiled = true;
