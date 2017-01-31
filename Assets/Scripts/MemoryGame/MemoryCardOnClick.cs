@@ -38,7 +38,7 @@ public class MemoryCardOnClick : MonoBehaviour {
 
 	private bool firstPairActivated = false;
 
-	void Start()
+	void  Start()
 	{
 		
 		StartCoroutine (playSecondSound ());
@@ -47,7 +47,7 @@ public class MemoryCardOnClick : MonoBehaviour {
 		if (myCardValue == 0) {
 			Debug.LogError ("myCardValue should never be zero");
 		}
-		audioObject = MemoryGameManager.audioSourceList [0];
+		audioObject = GameObject.FindWithTag("Audio");
 		audio = audioObject.GetComponent<AudioSource> ();
 	}
 
@@ -90,7 +90,6 @@ public class MemoryCardOnClick : MonoBehaviour {
 			if (MemoryGameManager.myCurrentScore == 2) {
 				FirstPair ();
 			} else {
-				audio.Stop ();
 				audio.PlayOneShot (victorySound);
 			}
 			if (MemoryGameManager.myCurrentScore >= MemoryGameManager.winRequirement && MemoryGameManager.winRequirement != 0) {
