@@ -22,6 +22,6 @@ public class SoundSystem : MonoBehaviour {
         _source.clip = clip;
         if(_source.isPlaying)
             _source.Stop();
-        _source.Play();
+        _source.PlayOneShot(clip);
     }
 }
