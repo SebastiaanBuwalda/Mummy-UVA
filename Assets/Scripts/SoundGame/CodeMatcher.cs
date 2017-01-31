@@ -51,6 +51,8 @@ public class CodeMatcher : MonoBehaviour {
 
     private bool wrongAwnser = false;
 
+    private bool playOnce = false;
+
     // Update is called once per frame
     void Update () {
 
@@ -80,6 +82,7 @@ public class CodeMatcher : MonoBehaviour {
         }
 
         CheckBox();
+        CheckAwnser();
     }
 
     /// CHECKS IF EVERYTHING IS FILLED FOR THE MEMORY GAME
@@ -90,7 +93,8 @@ public class CodeMatcher : MonoBehaviour {
 				allFilled = true;
                 MatchCode();
             } else {
-				allFilled = false;
+                playOnce = false;
+                allFilled = false;
 			}
 		}
     }
@@ -106,6 +110,7 @@ public class CodeMatcher : MonoBehaviour {
             }
             else
             {
+                playOnce = false;
                 allFilled = false;
             }
         }else if (gameMode == 4)
@@ -117,26 +122,33 @@ public class CodeMatcher : MonoBehaviour {
             }
             else
             {
+                playOnce = false;
                 allFilled = false;
             }
         }
     }
 
     //MATCHES THE CODE 
-
     private void MatchCode() {
         if (allFilled == true && boxCodeCombination == correctCode)
         {
             mouseClick = false;
             CorrectCode();
         }
-        else
+        else if(playOnce == false)
         {
-            audio.Stop();
-            audio.PlayOneShot(wrongSound);
-
-            wrongAwnser = true;
+            StartCoroutine(WrongSound());
         }
+    }
+
+    //PLAYS THE WRONG SOUND ONCE
+    IEnumerator WrongSound()
+    {
+        audio.Stop();
+        audio.PlayOneShot(wrongSound);
+        wrongAwnser = true;
+        playOnce = true;
+        yield return new WaitForSeconds(0);
     }
 
     //CHECKS THE GAMEMODE AND PLAYS THE CORRECT SOUND
@@ -144,32 +156,53 @@ public class CodeMatcher : MonoBehaviour {
     private void CorrectCode() {
         if (gameMode == 2)
         {
-            StartCoroutine(SwitchScene());
+            if (playOnce == false)
+            {
+                StartCoroutine(SwitchScene());
+            }
+            playOnce = true;
         }
-        else if (gameMode == 3)
+        else if (playOnce == false)
         {
-            audio.Stop();
-            audio.PlayOneShot(correctSound1);
+            if (gameMode == 3)
+            {
+                if (playOnce == false)
+                {
+                    audio.Stop();
+                    audio.PlayOneShot(correctSound1);
 
-            StartCoroutine(SwitchScene());
-        }
-        else if (gameMode == 4)
-        {
-            audio.Stop();
-            audio.PlayOneShot(correctSound2);
+                    StartCoroutine(SwitchScene());
+                }
+                playOnce = true;
+            }
+            else if (gameMode == 4)
+            {
+                if (playOnce == false)
+                { 
+                    audio.Stop();
+                    audio.PlayOneShot(correctSound2);
 
-            StartCoroutine(SwitchScene());
+                    StartCoroutine(SwitchScene());
+                }
+                playOnce = true;
+            }
         }
     }
 
     //PLAYS THE LAST SOUND AND SWITCHES SCENE
     IEnumerator SwitchScene()
     {
-        yield return new WaitForSeconds(timeToWait);
-		if (gameMode==3||gameMode==4) {
-			audio.Stop ();
-			audio.PlayOneShot (correctSound);
-		}
+        if (gameMode == 3 || gameMode == 4)
+        {
+            yield return new WaitForSeconds(timeToWait);
+            audio.Stop();
+            audio.PlayOneShot(correctSound);
+        }
+        else {
+            audio.Stop();
+            audio.PlayOneShot(correctSound);
+        }
+
         yield return new WaitForSeconds(timeToWait);
         Application.LoadLevel(nextLevelCode);
     }
