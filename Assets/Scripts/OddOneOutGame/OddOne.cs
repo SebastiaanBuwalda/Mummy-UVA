@@ -11,7 +11,7 @@ public class OddOne : MonoBehaviour
      public static event Global Change;
 
 	[SerializeField]
-	private string nextLevel = "OddOneOutGameToSoundGame";
+	private string nextLevel = "Achievement1";
     private Vector2 _beginPoint;
     private Vector2 _endPoint;
     private Vector2 _currentPoint;
