@@ -1,0 +1,940 @@
+fileFormatVersion: 2
+guid: 649d0021d89606848beeaa6e1b129a9c
+timeCreated: 1485866461
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: swing_0
+    21300002: swing_1
+    21300004: swing_2
+    21300006: swing_3
+    21300008: swing_4
+    21300010: swing_5
+    21300012: swing_6
+    21300014: swing_7
+    21300016: swing_8
+    21300018: swing_9
+    21300020: swing_10
+    21300022: swing_11
+    21300024: swing_12
+    21300026: swing_13
+    21300028: swing_14
+    21300030: swing_15
+    21300032: swing_16
+    21300034: swing_17
+    21300036: swing_18
+    21300038: swing_19
+    21300040: swing_20
+    21300042: swing_21
+    21300044: swing_22
+    21300046: swing_23
+    21300048: swing_24
+    21300050: swing_25
+    21300052: swing_26
+    21300054: swing_27
+    21300056: swing_28
+    21300058: swing_29
+    21300060: swing_30
+    21300062: swing_31
+    21300064: swing_32
+    21300066: swing_33
+    21300068: swing_34
+    21300070: swing_35
+    21300072: swing_36
+    21300074: swing_37
+    21300076: swing_38
+    21300078: swing_39
+    21300080: swing_40
+    21300082: swing_41
+    21300084: swing_42
+    21300086: swing_43
+    21300088: swing_44
+    21300090: swing_45
+    21300092: swing_46
+    21300094: swing_47
+    21300096: swing_48
+    21300098: swing_49
+    21300100: swing_50
+    21300102: swing_51
+    21300104: swing_52
+    21300106: swing_53
+    21300108: swing_54
+    21300110: swing_55
+    21300112: swing_56
+    21300114: swing_57
+    21300116: swing_58
+    21300118: swing_59
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_1
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_2
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_3
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_4
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_5
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_6
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_7
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_8
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_9
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1870
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_11
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_12
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_13
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_15
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_16
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_17
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_18
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_19
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1496
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_22
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_23
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_24
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_25
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_26
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_27
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_28
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_29
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1122
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_32
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_33
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_34
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_35
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_36
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_37
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_38
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_39
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 748
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_41
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_42
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_43
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_44
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_45
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_46
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_47
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_48
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_49
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 374
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_51
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_52
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_53
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_54
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_55
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_56
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_57
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_58
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swing_59
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 0
+        width: 560
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

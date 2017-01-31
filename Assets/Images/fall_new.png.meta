@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 51284c74676788240b5cd6ce7fc26230
+timeCreated: 1485869695
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fall_new_0
+    21300002: fall_new_1
+    21300004: fall_new_2
+    21300006: fall_new_3
+    21300008: fall_new_4
+    21300010: fall_new_5
+    21300012: fall_new_6
+    21300014: fall_new_7
+    21300016: fall_new_8
+    21300018: fall_new_9
+    21300020: fall_new_10
+    21300022: fall_new_11
+    21300024: fall_new_12
+    21300026: fall_new_13
+    21300028: fall_new_14
+    21300030: fall_new_15
+    21300032: fall_new_16
+    21300034: fall_new_17
+    21300036: fall_new_18
+    21300038: fall_new_19
+    21300040: fall_new_20
+    21300042: fall_new_21
+    21300044: fall_new_22
+    21300046: fall_new_23
+    21300048: fall_new_24
+    21300050: fall_new_25
+    21300052: fall_new_26
+    21300054: fall_new_27
+    21300056: fall_new_28
+    21300058: fall_new_29
+    21300060: fall_new_30
+    21300062: fall_new_31
+    21300064: fall_new_32
+    21300066: fall_new_33
+    21300068: fall_new_34
+    21300070: fall_new_35
+    21300072: fall_new_36
+    21300074: fall_new_37
+    21300076: fall_new_38
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fall_new_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_1
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_2
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_3
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_4
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_5
+      rect:
+        serializedVersion: 2
+        x: 4680
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_6
+      rect:
+        serializedVersion: 2
+        x: 5616
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_7
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_8
+      rect:
+        serializedVersion: 2
+        x: 7488
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_9
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_10
+      rect:
+        serializedVersion: 2
+        x: 9360
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_11
+      rect:
+        serializedVersion: 2
+        x: 10296
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_12
+      rect:
+        serializedVersion: 2
+        x: 11232
+        y: 3012
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_14
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_15
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_16
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_17
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_18
+      rect:
+        serializedVersion: 2
+        x: 4680
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_19
+      rect:
+        serializedVersion: 2
+        x: 5616
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_20
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_21
+      rect:
+        serializedVersion: 2
+        x: 7488
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_22
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_23
+      rect:
+        serializedVersion: 2
+        x: 9360
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_24
+      rect:
+        serializedVersion: 2
+        x: 10296
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_25
+      rect:
+        serializedVersion: 2
+        x: 11232
+        y: 1506
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_27
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_28
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_29
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_30
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_31
+      rect:
+        serializedVersion: 2
+        x: 4680
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_32
+      rect:
+        serializedVersion: 2
+        x: 5616
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_33
+      rect:
+        serializedVersion: 2
+        x: 6552
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_34
+      rect:
+        serializedVersion: 2
+        x: 7488
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_35
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_36
+      rect:
+        serializedVersion: 2
+        x: 9360
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_37
+      rect:
+        serializedVersion: 2
+        x: 10296
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fall_new_38
+      rect:
+        serializedVersion: 2
+        x: 11232
+        y: 0
+        width: 936
+        height: 1506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
