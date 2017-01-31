@@ -28,6 +28,8 @@ public class OddOne : MonoBehaviour
     public AudioClip DeRichtingWaarin;
     public AudioClip Positive;
 
+    private int _totalImages = 12;
+
     private void OnEnable()
     {
         _particle = Resources.Load("ParticleEffect") as GameObject;
@@ -101,7 +103,7 @@ public class OddOne : MonoBehaviour
                     Change();
                     SoundSystem.playAudio(Positive);}
 
-                if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft) { 
+                else if (SwipeDirectionCheck("left") && Change != null && _checkSwipeLeft) { 
                 SoundSystem.playAudio(Positive);
                 StartCoroutine(LoadNextLevel());}
             }
@@ -123,7 +125,7 @@ public class OddOne : MonoBehaviour
     private void ChangeSprite()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
-        var r = Random.Range(1, 18);
+        var r = Random.Range(1, 12);
         GetComponent<Image>().sprite = Resources.Load("Ex2/" + r.ToString(), typeof(Sprite)) as Sprite;
         _checkSwipeLeft = true;
     }

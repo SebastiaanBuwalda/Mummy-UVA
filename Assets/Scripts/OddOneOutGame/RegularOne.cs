@@ -7,21 +7,18 @@ public class RegularOne : MonoBehaviour {
 
     [SerializeField]
     private Sprite _oddOneOutSprite;
-
     [SerializeField]
     private AudioClip _HelaasDitIs;
-
     [SerializeField]
     private AudioClip _goedGedaan;
-
     [SerializeField]
     private AudioClip DeRichtingWaarin;
-
     [SerializeField]
     private AudioClip GebruikJeVinger;
-
     [SerializeField]
     private AudioClip _positive;
+
+    private int _totalImages = 12;
 
     private bool clicked = false;
 
@@ -51,7 +48,7 @@ public class RegularOne : MonoBehaviour {
 
     private void ChangeSprite()
     {
-        int r = Random.Range(1, 18);
+        int r = Random.Range(1, _totalImages);
         GetComponent<Image>().sprite = (Sprite)Resources.Load("Ex2/" + r.ToString(), typeof(Sprite));
         SoundSystem.playAudio(GebruikJeVinger);
     }
