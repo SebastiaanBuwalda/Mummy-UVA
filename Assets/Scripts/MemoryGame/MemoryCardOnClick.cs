@@ -16,6 +16,9 @@ public class MemoryCardOnClick : MonoBehaviour {
 	private AudioClip firstPairSound;
 
 	[SerializeField]
+	private AudioClip victorySound;
+
+	[SerializeField]
 	private int myCardValue = 1;
 
 	private SpriteRenderer spriteRenderer;
@@ -86,6 +89,9 @@ public class MemoryCardOnClick : MonoBehaviour {
 			MemoryGameManager.myCurrentScore++;
 			if (MemoryGameManager.myCurrentScore == 2) {
 				FirstPair ();
+			} else {
+				audio.Stop ();
+				audio.PlayOneShot (victorySound);
 			}
 			if (MemoryGameManager.myCurrentScore >= MemoryGameManager.winRequirement && MemoryGameManager.winRequirement != 0) {
 				StartCoroutine (WinGame ());
