@@ -130,7 +130,7 @@ public class CodeMatcher : MonoBehaviour {
             mouseClick = false;
             CorrectCode();
         }
-        else if (gameMode == 3 || gameMode == 4)
+        else
         {
             audio.Stop();
             audio.PlayOneShot(wrongSound);
