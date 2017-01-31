@@ -19,14 +19,5 @@ public class SoundIntro : MonoBehaviour
     void Start()
     {
         audio.PlayOneShot(introSound);
-        StartCoroutine(SwitchScene());
-    }
-
-    //PLAYS second intro sound
-    IEnumerator SwitchScene()
-    {
-        yield return new WaitForSeconds(timeToWait);
-        audio.Stop();
-        audio.PlayOneShot(introSound2);
     }
 }
